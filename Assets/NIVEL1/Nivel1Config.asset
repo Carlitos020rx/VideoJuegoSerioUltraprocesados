@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544a32df07fe46547b31fe7f5aad16b8, type: 3}
+  m_Name: Nivel1Config
+  m_EditorClassIdentifier: 
+  aciertosParaGanar: 6
+  aciertoCambioDificultad: 0
+  maxIngredientesMarcados: 6
+  alimentosDisponibles:
+  - {fileID: 11400000, guid: 5a29b1d7d9dfdcb41a3add07b4538f59, type: 2}
+  - {fileID: 11400000, guid: 578c39c69cacd7d41b2ef3da5405945b, type: 2}
+  - {fileID: 11400000, guid: 77779c58c117c844fb7f36ccf585193d, type: 2}
+  alimentosDificiles:
+  - {fileID: 11400000, guid: 3a5f68a703d4ec540a7512a113215bd0, type: 2}
+  sellosDisponibles:
+  - {fileID: 11400000, guid: 1977fa02d61d53340a5f40482826a218, type: 2}
+  - {fileID: 11400000, guid: 222312b3aecc49e4f879820238cf7c7e, type: 2}
+  - {fileID: 11400000, guid: ae1abeb4d875f9a438dd4e53f75226c7, type: 2}
+  - {fileID: 11400000, guid: d5ff2fe2108054943b7fe259a0a36c2f, type: 2}
+  - {fileID: 11400000, guid: 3109c7d26a6c05a4b8711aabc0eb52e9, type: 2}

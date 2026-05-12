@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb8fc2a1b389bd4c852eb013ae62e6e, type: 3}
+  m_Name: HeladoDreamVanilla
+  m_EditorClassIdentifier: 
+  nombre: CreamDream Vanilla
+  categoria: Postre congelado
+  sprite: {fileID: 21300000, guid: f14476f2c460ade44904ede850e59840, type: 3}
+  ingredientes:
+  - Leche descremada
+  - "Az\xFAcar"
+  - Aceite vegetal hidrogenado
+  - Saborizante natural de vainilla
+  - Polisorbato 80
+  - Carboximetilcelulosa
+  - Sal
+  ingredientesPeligrosos:
+  - nombre: Polisorbato 80
+    descripcion: ejemplosjajsajsjajsajdskjcnsjcnasjxaksdjsakdjakdjaskdjaskdjaskdj
+  - nombre: Aceite vegetal hidrogenado
+    descripcion: sdjashjsahdajsdhsajdhasjdhsajdhasjdhasdjsahdjashdasjdhasjhsajdhasjdhasjdhasjdhasj
+  esUltraprocesado: 1

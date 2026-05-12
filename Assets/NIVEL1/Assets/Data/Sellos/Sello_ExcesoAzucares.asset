@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2360d0a8dc661e54ba71a4a00f1eace7, type: 3}
+  m_Name: Sello_ExcesoAzucares
+  m_EditorClassIdentifier: 
+  nombreSello: Exceso en Azucares
+  sprite: {fileID: 21300000, guid: 86107560a54499f4083068bc119ad5ca, type: 3}
+  descripcion: "Indica que el producto contiene una cantidad alta de az\xFAcares
+    a\xF1adidos. Su consumo frecuente est\xE1 relacionado con sobrepeso, caries y
+    diabetes tipo 2."
