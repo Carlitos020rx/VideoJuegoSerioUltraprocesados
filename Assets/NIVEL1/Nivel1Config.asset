@@ -13,14 +13,18 @@ MonoBehaviour:
   m_Name: Nivel1Config
   m_EditorClassIdentifier: 
   aciertosParaGanar: 6
-  aciertoCambioDificultad: 0
+  aciertoCambioDificultad: 3
   maxIngredientesMarcados: 6
   alimentosDisponibles:
-  - {fileID: 11400000, guid: 5a29b1d7d9dfdcb41a3add07b4538f59, type: 2}
-  - {fileID: 11400000, guid: 578c39c69cacd7d41b2ef3da5405945b, type: 2}
-  - {fileID: 11400000, guid: 77779c58c117c844fb7f36ccf585193d, type: 2}
+  - {fileID: 11400000, guid: 1b7716861c4731541ac0a193ae732b6c, type: 2}
+  - {fileID: 11400000, guid: bf7caf0bd41d60141b1fbece511393d6, type: 2}
+  - {fileID: 11400000, guid: de62d31cfd20d9548a1625c0c71c1ffa, type: 2}
+  - {fileID: 11400000, guid: f67c986b204b8074b954dc076dac0898, type: 2}
   alimentosDificiles:
-  - {fileID: 11400000, guid: 3a5f68a703d4ec540a7512a113215bd0, type: 2}
+  - {fileID: 11400000, guid: ef2a10b7e93a4b7499d427bdb5426218, type: 2}
+  - {fileID: 11400000, guid: 4e729043a170362419ab20b40adfda06, type: 2}
+  - {fileID: 11400000, guid: c91ef8307b618a940881427613fb12eb, type: 2}
+  - {fileID: 11400000, guid: 3a24647c7dff1e7468b10b09b99a3608, type: 2}
   sellosDisponibles:
   - {fileID: 11400000, guid: 1977fa02d61d53340a5f40482826a218, type: 2}
   - {fileID: 11400000, guid: 222312b3aecc49e4f879820238cf7c7e, type: 2}

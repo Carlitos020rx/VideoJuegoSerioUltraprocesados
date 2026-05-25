@@ -13,6 +13,9 @@ public class FeedbackPantalla : MonoBehaviour
     public Color colorFallo   = new Color(0.8f, 0.1f, 0.1f, 0.5f);
     public float duracionFlash = 0.6f;
 
+    [Tooltip("Retraso antes de que aparezca el flash de color")]
+    public float delayFlash = 0.4f;
+
     void Start()
     {
         if (panelFlash != null)
@@ -31,30 +34,5 @@ public class FeedbackPantalla : MonoBehaviour
         StartCoroutine(Flash(verde ? colorAcierto : colorFallo));
     }
 
-    IEnumerator Flash(Color colorObjetivo)
-    {
-        // Fade in
-        float t = 0f;
-        float mitad = duracionFlash * 0.3f;
-        while (t < mitad)
-        {
-            t += Time.deltaTime;
-            float a = Mathf.Lerp(0f, colorObjetivo.a, t / mitad);
-            panelFlash.color = new Color(colorObjetivo.r, colorObjetivo.g, colorObjetivo.b, a);
-            yield return null;
-        }
-
-        // Fade out
-        t = 0f;
-        float salida = duracionFlash * 0.7f;
-        while (t < salida)
-        {
-            t += Time.deltaTime;
-            float a = Mathf.Lerp(colorObjetivo.a, 0f, t / salida);
-            panelFlash.color = new Color(colorObjetivo.r, colorObjetivo.g, colorObjetivo.b, a);
-            yield return null;
-        }
-
-        panelFlash.color = new Color(colorObjetivo.r, colorObjetivo.g, colorObjetivo.b, 0f);
-    }
+IEnumerator Flash(Color colorObjetivo) { if (delayFlash > 0f) yield return new WaitForSeconds(delayFlash); float t = 0f; float mitad = duracionFlash * 0.3f; while (t < mitad) { t += Time.deltaTime; float a = Mathf.Lerp(0f, colorObjetivo.a, t / mitad); panelFlash.color = new Color(colorObjetivo.r, colorObjetivo.g, colorObjetivo.b, a); yield return null; } t = 0f; float salida = duracionFlash * 0.7f; while (t < salida) { t += Time.deltaTime; float a = Mathf.Lerp(colorObjetivo.a, 0f, t / salida); panelFlash.color = new Color(colorObjetivo.r, colorObjetivo.g, colorObjetivo.b, a); yield return null; } panelFlash.color = new Color(colorObjetivo.r, colorObjetivo.g, colorObjetivo.b, 0f); }
 }

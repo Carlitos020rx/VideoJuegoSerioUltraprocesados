@@ -17,24 +17,7 @@ public class AudioManager : MonoBehaviour
     private float ultimoTiempoDecision;
     private const float COOLDOWN_REPETICION = 0.05f;
 
-    void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-
-        sourceMusica = gameObject.AddComponent<AudioSource>();
-        sourceMusica.loop = true;
-        sourceMusica.playOnAwake = false;
-
-        sourceSFX = gameObject.AddComponent<AudioSource>();
-        sourceSFX.loop = false;
-        sourceSFX.playOnAwake = false;
-    }
+void Awake() { Instance = this; sourceMusica = gameObject.AddComponent<AudioSource>(); sourceMusica.loop = true; sourceMusica.playOnAwake = false; sourceSFX = gameObject.AddComponent<AudioSource>(); sourceSFX.loop = false; sourceSFX.playOnAwake = false; }
 
     void Start()
     {
@@ -56,12 +39,7 @@ public class AudioManager : MonoBehaviour
         sourceMusica.Stop();
     }
 
-    public void SonarEntradaPanel()
-    {
-        if (Time.unscaledTime - ultimoTiempoPanel < COOLDOWN_REPETICION) return;
-        ultimoTiempoPanel = Time.unscaledTime;
-        Reproducir(config?.sfxEntradaPanel);
-    }
+public void SonarEntradaPanel() { Reproducir(config?.sfxEntradaPanel); }
 
     public void SonarClick()
     {
@@ -80,7 +58,9 @@ public class AudioManager : MonoBehaviour
     public void SonarAcierto()  { Reproducir(config?.sfxAcierto); }
     public void SonarFallo()    { Reproducir(config?.sfxFallo); }
     public void SonarAbrirEnciclopedia()  { Reproducir(config?.sfxAbrirEnciclopedia); }
-    public void SonarCerrarEnciclopedia() { Reproducir(config?.sfxCerrarEnciclopedia); }
+public void SonarCerrarEnciclopedia() { Reproducir(config?.sfxCerrarEnciclopedia); }
+
+    public void SonarVictoria() { Reproducir(config?.sfxVictoria); }
 
     void Reproducir(AudioClip clip)
     {

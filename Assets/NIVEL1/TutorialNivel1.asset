@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0aa18f284966e549b787b34c909d003, type: 3}
+  m_Name: TutorialNivel1
+  m_EditorClassIdentifier: 
+  pasos:
+  - texto: "El juego es simple. Van a aparecer alimentos. T\xFA tienes que decidir:
+      \xBFlo apruebo o lo rechazo? Tienes que aceptar los alimentos que no sean ultraprocesados
+      y rechazar los ultraprocesados."
+    vozEnOff: {fileID: 0}
+    imagen: {fileID: 21300000, guid: 0eb438df58b1cfb4094c4baecff65571, type: 3}
+  - texto: "detecta los ingredientes peligrosos, y marcar cu\xE1les son los que tu
+      cuerpo no necesita. Ojo: algunos ingredientes tienen nombres raros. La industria
+      es creativa con eso."
+    vozEnOff: {fileID: 8300000, guid: 1c7514d0e2adf0547bfe5aea606ce6ed, type: 3}
+    imagen: {fileID: 21300000, guid: 73a2a9cefb682c84fa92c9d62edc6676, type: 3}
+  - texto: "\"Dextrosa\" es az\xFAcar. \"Grasa vegetal parcialmente hidrogenada\"
+      es grasa trans. \"E-621\" es glutamato monos\xF3dico, un potenciador del sabor.
+      No todo lo peligroso viene con nombre obvio."
+    vozEnOff: {fileID: 8300000, guid: 864b105d6721ffd46b6ac48d3efd0cdb, type: 3}
+    imagen: {fileID: 21300000, guid: 73a2a9cefb682c84fa92c9d62edc6676, type: 3}
+  - texto: "Aqu\xED se mostrar\xE1n los ingredientes que elijas."
+    vozEnOff: {fileID: 8300000, guid: cd167f2b6e3003f4e9a0453b96d5ee07, type: 3}
+    imagen: {fileID: 21300000, guid: 0e6196a4c40f19349a2f7e5f7c9c890e, type: 3}
+  - texto: "Aqu\xED es donde aparecer\xE1 si fallaste o acertaste, y tambi\xE9n un
+      resumen de los ingredientes. Tienes que acertar seis alimentos. Identifica
+      los ingredientes problem\xE1ticos en cada uno."
+    vozEnOff: {fileID: 8300000, guid: 2a7f07a785f43d146a17573ccaa2f5ee, type: 3}
+    imagen: {fileID: 21300000, guid: 1164f6f93c285e54faa71c9d31eb39ab, type: 3}
+  - texto: A medida que aciertes, ganas estos sellos, debes conseguir 6 para ganar
+      el minijuego.
+    vozEnOff: {fileID: 8300000, guid: ab290fc717e5d3b45b90f3c093173f79, type: 3}
+    imagen: {fileID: 21300000, guid: b75a8f4faa9e66244919cec85a0e665c, type: 3}
+  - texto: "Tambi\xE9n tienes un libro para ver informaci\xF3n sobre ingredientes,\xA1No
+      seas t\xEDmido!"
+    vozEnOff: {fileID: 8300000, guid: ee17e7f97ba6a1f45bcd4896eed9b802, type: 3}
+    imagen: {fileID: 21300000, guid: 4c74f0b9ea741074ab9c997c7eec6a7c, type: 3}
+  - texto: "Lo que quiero con esto es ense\xF1arte a leer."
+    vozEnOff: {fileID: 8300000, guid: cec09447d43e8c64f9eed5b09e72d8bf, type: 3}
+    imagen: {fileID: 21300000, guid: beb4aa672342a9c4d80c4d28c9933fba, type: 3}

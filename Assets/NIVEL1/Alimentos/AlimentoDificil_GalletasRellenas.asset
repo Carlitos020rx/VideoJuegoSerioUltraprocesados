@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305ab116dcce2f6499f1c9278a304189, type: 3}
+  m_Name: AlimentoDificil_GalletasRellenas
+  m_EditorClassIdentifier: 
+  nombre: Galletas Rellenas
+  categoria: Pasabocas dulce
+  sprite: {fileID: 21300000, guid: 2efd3dec479dd5a49b5434642f334dba, type: 3}
+  ingredientes:
+  - Harina de trigo
+  - Azucar
+  - Carboximetilcelulosa
+  - Sacarina
+  - Cacao
+  - Sal
+  ingredientesPeligrosos:
+  - nombre: Carboximetilcelulosa
+    descripcion: Emulsionante. Altera microbiota intestinal, genera inflamacion.
+  - nombre: Sacarina
+    descripcion: Edulcorante. Desregula dopamina, norepinefrina y serotonina.
+  esUltraprocesado: 1
+  infoNutricional:
+  - nombre: Porcion
+    valor: 100g
+  - nombre: Calorias (kcal)
+    valor: 480
+  - nombre: Grasa total
+    valor: 20g
+  - nombre: Grasa saturada
+    valor: 8g
+  - nombre: Grasa trans
+    valor: 0g
+  - nombre: Carbohidratos
+    valor: 70g
+  - nombre: Azucares
+    valor: 38g
+  - nombre: Fibra
+    valor: 2g
+  - nombre: Proteina
+    valor: 5g
+  - nombre: Sodio
+    valor: 210mg
+  sellosCorrectos:
+  - {fileID: 11400000, guid: 222312b3aecc49e4f879820238cf7c7e, type: 2}
+  - {fileID: 11400000, guid: 1977fa02d61d53340a5f40482826a218, type: 2}

@@ -27,17 +27,7 @@ public class ArrastreCuaderno : MonoBehaviour, IPointerDownHandler, IDragHandler
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        if (objetivoArrastrar == null) return;
-        arrastrando = true;
-
-        Vector2 cursorLocal;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvasRT, eventData.position, camaraUI, out cursorLocal);
-
-        offsetArrastre = objetivoArrastrar.anchoredPosition - cursorLocal;
-    }
+public void OnPointerDown(PointerEventData eventData) { if (objetivoArrastrar == null) return; arrastrando = true; if (AudioManager.Instance != null) AudioManager.Instance.SonarClick(); Vector2 cursorLocal; RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRT, eventData.position, camaraUI, out cursorLocal); offsetArrastre = objetivoArrastrar.anchoredPosition - cursorLocal; }
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -73,8 +63,5 @@ public class ArrastreCuaderno : MonoBehaviour, IPointerDownHandler, IDragHandler
         objetivoArrastrar.anchoredPosition = nuevaPos;
     }
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        arrastrando = false;
-    }
+public void OnPointerUp(PointerEventData eventData) { if (arrastrando && AudioManager.Instance != null) AudioManager.Instance.SonarClick(); arrastrando = false; }
 }

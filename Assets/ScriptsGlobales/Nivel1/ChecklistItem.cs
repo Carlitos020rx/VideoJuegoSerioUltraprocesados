@@ -32,14 +32,7 @@ public class ChecklistItem : MonoBehaviour
         }
     }
 
-    void OnClick()
-    {
-        // Click sobre item del checklist = lo desmarca
-        if (OrigenExpediente != null)
-            OrigenExpediente.Desmarcar();
-        if (controller != null)
-            controller.QuitarItem(nombre);
-    }
+void OnClick() { if (OrigenExpediente != null) OrigenExpediente.Desmarcar(); if (controller != null) controller.QuitarItem(nombre); if (AudioManager.Instance != null) AudioManager.Instance.SonarClick(); }
 
     public void MostrarValidacion(bool esPeligrosoReal)
     {

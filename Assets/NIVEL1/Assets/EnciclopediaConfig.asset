@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: EnciclopediaConfig
   m_EditorClassIdentifier: 
   paginas:
-  - {fileID: 21300000, guid: a905e810ee4607a42b63ac6aa0fd9989, type: 3}
-  - {fileID: 21300000, guid: a4eafbc8ecc147d498108fb1e3d6d1a1, type: 3}
+  - {fileID: 21300000, guid: 1ca7c496328ccaa42a30a826a07a4f5e, type: 3}
+  - {fileID: 21300000, guid: 96bc148c67b77a44998a672446b8a9a0, type: 3}
+  - {fileID: 21300000, guid: 8a9aa7c0e3df80f4884d5aebf42f91ae, type: 3}
+  - {fileID: 21300000, guid: 1610a327999d4214f9cdc70d12059213, type: 3}
+  - {fileID: 21300000, guid: b2d7706bfb7af87479e60d242194f630, type: 3}
   porcentajeMinimoVisible: 0.5
   duracionAnimacion: 0.5
   offsetCerrado: 400

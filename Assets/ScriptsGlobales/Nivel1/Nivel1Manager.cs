@@ -15,6 +15,12 @@ public class Nivel1Manager : MonoBehaviour
     public ProgresoSellos progresoSellos;
     public FeedbackPantalla feedback;
     public AnimadorBotones animadorBotones;
+    public AnimadorPaneles animadorPaneles;
+    public PanelFinalNivel panelFinal;
+
+    [Header("Tutorial")]
+    [Tooltip("Si es true, el juego espera a que el tutorial termine antes de arrancar")]
+    public bool usarTutorial = true;
 
     [Header("Feedback dificultad facil")]
     public PanelFeedbackResultado panelResultadoFacil;
@@ -23,7 +29,18 @@ public class Nivel1Manager : MonoBehaviour
     public InfoNutricionalUI infoNutricionalUI;
     public SellosCheckboxController sellosCheckbox;
     public PanelFeedbackResultadoDificil panelResultadoDificil;
-    public AnimadorDificultad animadorDificultad;
+
+    [Tooltip("Paneles nuevos de dificultad alta que empiezan ocultos")]
+    public GameObject panelInfoNutricionalGO;
+    public GameObject panelSellosCheckboxGO;
+
+    [Header("Audio")]
+    [Tooltip("Retraso entre el sonido de decision (sello) y el de acierto/fallo")]
+    public float delaySonidoResultado = 0.4f;
+    [Tooltip("Retraso antes de que suba el panel de feedback y el boton Siguiente")]
+    public float delayPanelResultado = 0.8f;
+    [Tooltip("Retraso antes de que bajen los botones Aceptar/Rechazar tras presionarlos")]
+    public float delayBajarBotones = 0.5f;
 
     public AlimentoData        AlimentoActual        { get; private set; }
     public AlimentoDificilData AlimentoDificilActual { get; private set; }
@@ -36,18 +53,9 @@ public class Nivel1Manager : MonoBehaviour
 
     void Awake() { Instance = this; }
 
-    void Start()
-    {
-        if (config == null) { Debug.LogError("[Nivel1Manager] Falta asignar Nivel1Config"); return; }
+void Start() { if (config == null) { Debug.LogError("[Nivel1Manager] Falta asignar Nivel1Config"); return; } Aciertos = 0; DificultadAlta = false; if (sellosCheckbox != null && config.sellosDisponibles != null) sellosCheckbox.ConfigurarLista(config.sellosDisponibles); if (panelInfoNutricionalGO != null) panelInfoNutricionalGO.SetActive(false); if (panelSellosCheckboxGO != null) panelSellosCheckboxGO.SetActive(false); if (animadorPaneles != null) animadorPaneles.ColocarFuera(false); if (!usarTutorial) StartCoroutine(SecuenciaPrimerAlimento()); }
 
-        Aciertos = 0;
-        DificultadAlta = false;
-
-        if (sellosCheckbox != null && config.sellosDisponibles != null)
-            sellosCheckbox.ConfigurarLista(config.sellosDisponibles);
-
-        SiguienteAlimento(esPrimero: true);
-    }
+IEnumerator SecuenciaPrimerAlimento() { if (animadorPaneles != null) animadorPaneles.ColocarFuera(false); SiguienteAlimento(esPrimero: true); yield return null; if (AudioManager.Instance != null) AudioManager.Instance.SonarEntradaPanel(); if (animadorPaneles != null) yield return StartCoroutine(animadorPaneles.Entrar(false)); }
 
     public void OnAceptar()
     {
@@ -82,21 +90,16 @@ public class Nivel1Manager : MonoBehaviour
 
         checklist.MostrarValidacion(nombresPeligrosos);
         feedback.MostrarFlash(verde: ultimoAcierto);
-
-        if (AudioManager.Instance != null)
-        {
-            if (ultimoAcierto) AudioManager.Instance.SonarAcierto();
-            else               AudioManager.Instance.SonarFallo();
-        }
+        StartCoroutine(SonarResultadoConDelay());
 
         if (ultimoAcierto) { progresoSellos.AgregarSello(); Aciertos++; }
 
-        int totalPeligrosos = nombresPeligrosos.Count;
-        int peligrososAcertados = 0;
-        foreach (var marcado in ingredientesMarcados)
-            if (nombresPeligrosos.Contains(marcado)) peligrososAcertados++;
+        int total = nombresPeligrosos.Count;
+        int acertados = 0;
+        foreach (var m in ingredientesMarcados)
+            if (nombresPeligrosos.Contains(m)) acertados++;
 
-        StartCoroutine(SecuenciaMostrarResultadoFacil(peligrososAcertados, totalPeligrosos));
+        StartCoroutine(SecuenciaMostrarResultadoFacil(acertados, total));
     }
 
     void ProcesarDecisionDificil(bool decisionAceptar)
@@ -112,28 +115,33 @@ public class Nivel1Manager : MonoBehaviour
         checklist.MostrarValidacion(nombresPeligrosos);
         sellosCheckbox.MostrarValidacion(AlimentoDificilActual.sellosCorrectos);
         feedback.MostrarFlash(verde: ultimoAcierto);
+        StartCoroutine(SonarResultadoConDelay());
 
+        if (ultimoAcierto) { progresoSellos.AgregarSello(); Aciertos++; }
+
+        int totalIng = nombresPeligrosos.Count;
+        int acertadosIng = 0;
+        foreach (var m in ingredientesMarcados)
+            if (nombresPeligrosos.Contains(m)) acertadosIng++;
+
+        var sellosMarcados = sellosCheckbox.ObtenerSellosMarcados();
+        int totalSellos = AlimentoDificilActual.sellosCorrectos.Count;
+        int acertadosSellos = 0;
+        foreach (var s in sellosMarcados)
+            if (AlimentoDificilActual.sellosCorrectos.Contains(s)) acertadosSellos++;
+
+        StartCoroutine(SecuenciaMostrarResultadoDificil(acertadosIng, totalIng,
+            acertadosSellos, totalSellos, sellosMarcados));
+    }
+
+    IEnumerator SonarResultadoConDelay()
+    {
+        yield return new WaitForSeconds(delaySonidoResultado);
         if (AudioManager.Instance != null)
         {
             if (ultimoAcierto) AudioManager.Instance.SonarAcierto();
             else               AudioManager.Instance.SonarFallo();
         }
-
-        if (ultimoAcierto) { progresoSellos.AgregarSello(); Aciertos++; }
-
-        int totalPeligrosos = nombresPeligrosos.Count;
-        int peligrososAcertados = 0;
-        foreach (var marcado in ingredientesMarcados)
-            if (nombresPeligrosos.Contains(marcado)) peligrososAcertados++;
-
-        var sellosMarcados = sellosCheckbox.ObtenerSellosMarcados();
-        int totalSellos = AlimentoDificilActual.sellosCorrectos.Count;
-        int sellosAcertados = 0;
-        foreach (var s in sellosMarcados)
-            if (AlimentoDificilActual.sellosCorrectos.Contains(s)) sellosAcertados++;
-
-        StartCoroutine(SecuenciaMostrarResultadoDificil(peligrososAcertados, totalPeligrosos,
-            sellosAcertados, totalSellos, sellosMarcados));
     }
 
     bool ValidarIngredientes(List<string> peligrosos)
@@ -146,53 +154,26 @@ public class Nivel1Manager : MonoBehaviour
 
     IEnumerator SecuenciaMostrarResultadoFacil(int aciertos, int total)
     {
+        yield return new WaitForSeconds(delayBajarBotones);
         yield return StartCoroutine(animadorBotones.OcultarAceptarRechazar());
-
+        yield return new WaitForSeconds(delayPanelResultado);
         panelResultadoFacil.MostrarResultado(ultimoAcierto, aciertos, total, ingredientesMarcados, AlimentoActual);
-
         if (AudioManager.Instance != null) AudioManager.Instance.SonarEntradaPanel();
-
         yield return StartCoroutine(animadorBotones.MostrarPanelResultadoYSiguiente());
     }
 
     IEnumerator SecuenciaMostrarResultadoDificil(int ingAcertados, int totalIng, int sellosAcertados, int totalSellos, List<SelloNutricional> sellosMarcados)
     {
+        yield return new WaitForSeconds(delayBajarBotones);
         yield return StartCoroutine(animadorBotones.OcultarAceptarRechazar());
-
+        yield return new WaitForSeconds(delayPanelResultado);
         panelResultadoDificil.MostrarResultado(ultimoAcierto, ingAcertados, totalIng,
             sellosAcertados, totalSellos, ingredientesMarcados, sellosMarcados, AlimentoDificilActual);
-
         if (AudioManager.Instance != null) AudioManager.Instance.SonarEntradaPanel();
-
         yield return StartCoroutine(animadorBotones.MostrarPanelResultadoYSiguienteDificil());
     }
 
-    IEnumerator SecuenciaSiguiente()
-    {
-        if (!DificultadAlta || Aciertos < config.aciertoCambioDificultad + 1)
-            yield return StartCoroutine(animadorBotones.OcultarPanelResultadoYSiguiente());
-        else
-            yield return StartCoroutine(animadorBotones.OcultarPanelResultadoYSiguienteDificil());
-
-        if (Aciertos >= config.aciertosParaGanar)
-        {
-            TerminarNivel();
-            yield break;
-        }
-
-        if (!DificultadAlta && Aciertos >= config.aciertoCambioDificultad)
-        {
-            DificultadAlta = true;
-            if (animadorDificultad != null)
-            {
-                if (AudioManager.Instance != null) AudioManager.Instance.SonarEntradaPanel();
-                yield return StartCoroutine(animadorDificultad.EntrarDificultadAlta());
-            }
-        }
-
-        SiguienteAlimento(esPrimero: false);
-        yield return StartCoroutine(animadorBotones.MostrarAceptarRechazar());
-    }
+IEnumerator SecuenciaSiguiente() { yield return new WaitForSeconds(delayBajarBotones); if (!DificultadAlta || Aciertos < config.aciertoCambioDificultad + 1) yield return StartCoroutine(animadorBotones.OcultarPanelResultadoYSiguiente()); else yield return StartCoroutine(animadorBotones.OcultarPanelResultadoYSiguienteDificil()); if (Aciertos >= config.aciertosParaGanar) { TerminarNivel(); yield break; } bool acabaDeCambiar = false; if (!DificultadAlta && Aciertos >= config.aciertoCambioDificultad) { DificultadAlta = true; acabaDeCambiar = true; } if (animadorPaneles != null) { if (AudioManager.Instance != null) AudioManager.Instance.SonarEntradaPanel(); yield return StartCoroutine(animadorPaneles.Salir(DificultadAlta && !acabaDeCambiar)); } if (acabaDeCambiar) { if (panelInfoNutricionalGO != null) panelInfoNutricionalGO.SetActive(true); if (panelSellosCheckboxGO != null) panelSellosCheckboxGO.SetActive(true); if (animadorPaneles != null) animadorPaneles.ColocarFuera(true); } SiguienteAlimento(esPrimero: false); if (animadorPaneles != null) { if (AudioManager.Instance != null) AudioManager.Instance.SonarEntradaPanel(); yield return StartCoroutine(animadorPaneles.Entrar(DificultadAlta)); } yield return StartCoroutine(animadorBotones.MostrarAceptarRechazar()); }
 
     void SiguienteAlimento(bool esPrimero)
     {
@@ -221,13 +202,7 @@ public class Nivel1Manager : MonoBehaviour
             animadorBotones.PrepararEstadoInicial();
     }
 
-    void TerminarNivel()
-    {
-        if (GameManager.Instance != null)
-            GameManager.Instance.TerminarNivel1(Aciertos);
-        else
-            Debug.Log("[Nivel1Manager] Nivel terminado con " + Aciertos + " aciertos");
-    }
+void TerminarNivel() { if (panelFinal != null) panelFinal.Mostrar(); else if (GameManager.Instance != null) GameManager.Instance.TerminarNivel1(Aciertos); else Debug.Log("[Nivel1Manager] Nivel terminado con " + Aciertos + " aciertos"); }
 
     public bool IntentarMarcarIngrediente(string ingrediente)
     {
@@ -241,4 +216,7 @@ public class Nivel1Manager : MonoBehaviour
     {
         ingredientesMarcados.Remove(ingrediente);
     }
+
+
+public void IniciarJuegoDespuesDeTutorial() { StartCoroutine(SecuenciaPrimerAlimento()); }
 }

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305ab116dcce2f6499f1c9278a304189, type: 3}
+  m_Name: AlimentoDificil_BebidaEnergetica
+  m_EditorClassIdentifier: 
+  nombre: Bebida Energetica
+  categoria: Bebida
+  sprite: {fileID: 21300000, guid: 295f635b39ec6ac439616c28e12166a3, type: 3}
+  ingredientes:
+  - Agua carbonatada
+  - Azucar
+  - Cafeina
+  - Sucralosa
+  - Aspartame
+  - Acido citrico
+  ingredientesPeligrosos:
+  - nombre: Sucralosa
+    descripcion: Edulcorante. Altera metabolitos del triptofano, precursor de serotonina.
+  - nombre: Aspartame
+    descripcion: Edulcorante. Desregula dopamina, norepinefrina y serotonina.
+  esUltraprocesado: 1
+  infoNutricional:
+  - nombre: Porcion
+    valor: 100ml
+  - nombre: Calorias (kcal)
+    valor: 45
+  - nombre: Grasa total
+    valor: 0g
+  - nombre: Grasa saturada
+    valor: 0g
+  - nombre: Grasa trans
+    valor: 0g
+  - nombre: Carbohidratos
+    valor: 11g
+  - nombre: Azucares
+    valor: 11g
+  - nombre: Fibra
+    valor: 0g
+  - nombre: Proteina
+    valor: 0g
+  - nombre: Sodio
+    valor: 100mg
+  sellosCorrectos:
+  - {fileID: 11400000, guid: 222312b3aecc49e4f879820238cf7c7e, type: 2}
+  - {fileID: 11400000, guid: 1977fa02d61d53340a5f40482826a218, type: 2}

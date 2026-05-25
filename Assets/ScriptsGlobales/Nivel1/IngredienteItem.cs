@@ -27,20 +27,7 @@ public class IngredienteItem : MonoBehaviour
         }
     }
 
-    void OnClick()
-    {
-        if (yaEnChecklist) return;
-        if (Nivel1Manager.Instance == null) return;
-
-        bool agregado = Nivel1Manager.Instance.IntentarMarcarIngrediente(nombreIngrediente);
-        if (agregado)
-        {
-            yaEnChecklist = true;
-            // Cambia color para indicar que se selecciono (verde por defecto)
-            textoIngrediente.color = new Color(0.1f, 0.6f, 0.1f);
-            Nivel1Manager.Instance.checklist.AgregarItemAlChecklist(nombreIngrediente, this);
-        }
-    }
+void OnClick() { if (yaEnChecklist) return; if (Nivel1Manager.Instance == null) return; bool agregado = Nivel1Manager.Instance.IntentarMarcarIngrediente(nombreIngrediente); if (agregado) { yaEnChecklist = true; textoIngrediente.color = new Color(0.1f, 0.6f, 0.1f); Nivel1Manager.Instance.checklist.AgregarItemAlChecklist(nombreIngrediente, this); if (AudioManager.Instance != null) AudioManager.Instance.SonarClick(); } }
 
     // Llamado por el ChecklistController cuando el jugador desmarca el item desde el checklist
     public void Desmarcar()

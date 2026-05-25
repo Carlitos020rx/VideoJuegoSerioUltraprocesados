@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb8fc2a1b389bd4c852eb013ae62e6e, type: 3}
+  m_Name: Alimento_SopaInstantanea
+  m_EditorClassIdentifier: 
+  nombre: Sopa Instantanea
+  categoria: Comida lista
+  sprite: {fileID: 21300000, guid: 77dfb23313d98714e8355c47f746f252, type: 3}
+  ingredientes:
+  - Fideos
+  - Sal
+  - Glutamato monosodico
+  - Bisfenol A
+  - Dioxido de titanio
+  - Vegetales deshidratados
+  ingredientesPeligrosos:
+  - nombre: Glutamato monosodico
+    descripcion: Potenciador del sabor (E-621). Asociado a comportamientos depresivos
+      y ansiosos en estudios.
+  - nombre: Bisfenol A
+    descripcion: Migrante del empaque. Disruptor de los sistemas de estres, ligado
+      a estados ansiosos y depresivos.
+  - nombre: Dioxido de titanio
+    descripcion: "Colorante usado por su blancura. Se ha vinculado con neuroinflamacion
+      y da\xF1o a las neuronas dopaminergicas."
+  esUltraprocesado: 1

@@ -33,10 +33,7 @@ public class SelloCheckboxItem : MonoBehaviour
         }
     }
 
-    void OnToggleChanged(bool valor)
-    {
-        if (controller != null) controller.NotificarCambio();
-    }
+void OnToggleChanged(bool valor) { if (controller != null) controller.NotificarCambio(); if (AudioManager.Instance != null) AudioManager.Instance.SonarClick(); }
 
     public void MostrarValidacion(bool esCorrecto)
     {

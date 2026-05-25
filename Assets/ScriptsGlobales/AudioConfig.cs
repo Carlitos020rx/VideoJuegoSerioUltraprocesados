@@ -29,6 +29,9 @@ public class AudioConfig : ScriptableObject
     [Tooltip("Al cerrar la enciclopedia")]
     public AudioClip sfxCerrarEnciclopedia;
 
+    [Tooltip("Al completar el nivel - panel final")]
+    public AudioClip sfxVictoria;
+
     [Header("Volumen global de SFX")]
     [Range(0f, 1f)] public float volumenSFX = 0.8f;
 }
