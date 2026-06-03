@@ -52,3 +52,15 @@ MonoBehaviour:
   sellosCorrectos:
   - {fileID: 11400000, guid: 3109c7d26a6c05a4b8711aabc0eb52e9, type: 2}
   - {fileID: 11400000, guid: ae1abeb4d875f9a438dd4e53f75226c7, type: 2}
+  kcalPorPorcion: 536
+  sodioPorPorcion: 33
+  azucaresPorPorcion: 43
+  grasaSaturadaPorPorcion: 44
+  nutrienteClave: 0
+  mensajeUnaPorcion: Una porcion de papas son 536 kcal. Suena a una sola bolsa pero
+    es el 27% de tus 2000 kcal diarias... en un snack que comes en 5 minutos.
+  mensajeVariasPorciones: Acabas de comer entre 1072 y 1608 kcal. Eso es entre la
+    mitad y el 80% de toda tu energia del dia. Y ni siquiera son comidas reales.
+  mensajeMuchasPorciones: "Cuatro porciones son 2144 kcal. Pasaste el limite diario
+    solo en papas. La industria sabe que no puedes parar y dise\xF1a la bolsa para
+    eso."

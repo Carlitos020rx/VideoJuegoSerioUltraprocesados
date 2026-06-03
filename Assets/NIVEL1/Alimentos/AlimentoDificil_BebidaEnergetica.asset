@@ -52,3 +52,14 @@ MonoBehaviour:
   sellosCorrectos:
   - {fileID: 11400000, guid: 222312b3aecc49e4f879820238cf7c7e, type: 2}
   - {fileID: 11400000, guid: 1977fa02d61d53340a5f40482826a218, type: 2}
+  kcalPorPorcion: 45
+  sodioPorPorcion: 0
+  azucaresPorPorcion: 0
+  grasaSaturadaPorPorcion: 0
+  nutrienteClave: 0
+  mensajeUnaPorcion: 100 ml son 45 kcal. Pero una lata trae 250 ml o mas, asi que
+    estas tomando al menos 113 kcal de azucar liquida en cada lata.
+  mensajeVariasPorciones: "Entre 90 y 135 kcal de liquido azucarado. Lo peor: el
+    azucar liquido no te llena, sigues con hambre. Y la cafeina enga\xF1a a tu cuerpo."
+  mensajeMuchasPorciones: 180 kcal puede no parecer mucho... pero son 44 gramos de
+    azucar en una bebida. Eso supera el limite diario recomendado por la OMS.

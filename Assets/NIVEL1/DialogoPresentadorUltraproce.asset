@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4412f4baacaf80148bb6788b1e91cf6a, type: 3}
+  m_Name: DialogoPresentadorUltraproce
+  m_EditorClassIdentifier: 
+  lineas:
+  - texto: Bien. Entonces. Los ultraprocesados.
+    spritePresentador: {fileID: 21300000, guid: 1c30a4113d394ae47a05ee8f83629d95,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  - texto: "Los alimentos ultraprocesados son productos industriales elaborados principalmente
+      o en su totalidad a partir de sustancias derivadas de alimentos, combinadas
+      con aditivos qu\xEDmicos."
+    spritePresentador: {fileID: 21300000, guid: 4f74c0272cf8b03419d41c73a7fe0c60,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes:
+    - sprite: {fileID: 21300000, guid: 99d071c90e2c0614ba87b06d7cfb0bee, type: 3}
+      posicion: {x: -386.1712, y: 194.5865}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 21300000, guid: 9da6369b2ddfb8846b027b8d5157d5a8, type: 3}
+      posicion: {x: 470, y: 208}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 21300000, guid: c42a8447b390bb34999e5035863cbca7, type: 3}
+      posicion: {x: 449, y: -78}
+      tamano: {x: 321.3795, y: 216.6094}
+  - texto: "A menudo, contienen muy pocos (o ning\xFAn) alimento entero o natural
+      en su composici\xF3n. \xBFQu\xE9 son exactamente? Te los enumero:"
+    spritePresentador: {fileID: 21300000, guid: 1c30a4113d394ae47a05ee8f83629d95,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  - texto: "Bebidas azucaradas. Jugos industriales. Refrescos. Esas bebidas que dicen
+      \"con vitaminas\" pero tienen m\xE1s az\xFAcar que una torta."
+    spritePresentador: {fileID: 21300000, guid: df96ac30db1083d4db7b98fb7bcd6add,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes:
+    - sprite: {fileID: 21300000, guid: 3bbaa9ef67446604793f99a67f11215f, type: 3}
+      posicion: {x: -386.1712, y: 194.5865}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 21300000, guid: 5e6f91e519c942b43876a12eeece3473, type: 3}
+      posicion: {x: 470, y: 208}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 21300000, guid: d4b598249211ed946965cd43ec8296ec, type: 3}
+      posicion: {x: 449, y: -78}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 0}
+      posicion: {x: -402, y: -70}
+      tamano: {x: 321.3795, y: 216.6094}
+  - texto: "Snacks: papas de paquete, galletas, barras de cereal que parecen saludables
+      pero tienen jarabe de ma\xEDz de alta fructosa en el tercer ingrediente."
+    spritePresentador: {fileID: 21300000, guid: 1c30a4113d394ae47a05ee8f83629d95,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes:
+    - sprite: {fileID: 21300000, guid: 64c8e78f4fa5b354f9a4a3b97a6f0f64, type: 3}
+      posicion: {x: -386.1712, y: 194.5865}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 21300000, guid: 0f265fe4d780a2348a96a321520afa84, type: 3}
+      posicion: {x: 470, y: 208}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 21300000, guid: 03af543b9946d5845b9b174b037cf87e, type: 3}
+      posicion: {x: 449, y: -78}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 21300000, guid: 361a1a8b132a5d94782791bd904f2c90, type: 3}
+      posicion: {x: -402, y: -70}
+      tamano: {x: 321.3795, y: 216.6094}
+  - texto: "Carnes procesadas: salchichas, nuggets, hamburguesas reconstituidas.
+      B\xE1sicamente, partes de animal pegadas con aditivos."
+    spritePresentador: {fileID: 21300000, guid: df96ac30db1083d4db7b98fb7bcd6add,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes:
+    - sprite: {fileID: 21300000, guid: 4bc80788f4ec58444864b529694de6f9, type: 3}
+      posicion: {x: -386.1712, y: 194.5865}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 21300000, guid: 7f5e5f80056c0ce4f87fd83821a69a8a, type: 3}
+      posicion: {x: 470, y: 208}
+      tamano: {x: 321.3795, y: 216.6094}
+  - texto: "\xBFLo que todos tienen en com\xFAn?"
+    spritePresentador: {fileID: 21300000, guid: 4f74c0272cf8b03419d41c73a7fe0c60,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  - texto: "Est\xE1n llenos de az\xFAcares a\xF1adidos, grasas trans, sodio, y una
+      lista de aditivos que no reconocer\xEDas ni en un examen de qu\xEDmica."
+    spritePresentador: {fileID: 21300000, guid: dd689ee53d83dcf44bab46da15aedc9a,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes:
+    - sprite: {fileID: 21300000, guid: 567494ded99ce7a4e8a0de7f210c52ed, type: 3}
+      posicion: {x: -386.1712, y: 194.5865}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 21300000, guid: a26b3b7e769eda345ba25039e468a187, type: 3}
+      posicion: {x: 470, y: 208}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 21300000, guid: f1072489ca42fce40aaea4e6c3ceac2e, type: 3}
+      posicion: {x: 449, y: -78}
+      tamano: {x: 321.3795, y: 216.6094}
+  - texto: "Y por debajo de todo eso: sustancias como nitritos, bisfenol A que viene
+      del empaque y compuestos que promueven la inflamaci\xF3n en tu cuerpo sin que
+      t\xFA lo notes."
+    spritePresentador: {fileID: 21300000, guid: 849aedf6d5c760c46aabe9d8bb956ed8,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  - texto: "ya me estoy durmiendo yo mismo. Mejor... \xBFjugamos algo?"
+    spritePresentador: {fileID: 21300000, guid: 1c30a4113d394ae47a05ee8f83629d95,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  tituloEntrada: {fileID: 21300000, guid: fed3139b6ce203745a1a3483976b9395, type: 3}

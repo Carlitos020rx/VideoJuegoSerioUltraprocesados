@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4412f4baacaf80148bb6788b1e91cf6a, type: 3}
+  m_Name: DialogoPresentador_
+  m_EditorClassIdentifier: 
+  lineas:
+  - texto: "\xBFCu\xE1ndo fue la \xFAltima vez que le\xEDste lo que ten\xEDa por
+      dentro lo que te comiste hoy?No me refiero a las calor\xEDas. Me refiero a
+      lo que realmente tiene adentro."
+    spritePresentador: {fileID: 21300000, guid: 1c30a4113d394ae47a05ee8f83629d95,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  - texto: "Porque hay un tipo de alimento que est\xE1 en todas partes: en el desayuno,
+      en el recreo, en el puesto de la esquina, en tu nevera ahora mismo probablemente. "
+    spritePresentador: {fileID: 21300000, guid: 849aedf6d5c760c46aabe9d8bb956ed8,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes:
+    - sprite: {fileID: 21300000, guid: e4c50c6e10ac5384e8fea9181adfcf0f, type: 3}
+      posicion: {x: -386.1712, y: 194.5865}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 21300000, guid: 48e818245c71fe64fb3f53a362819dfc, type: 3}
+      posicion: {x: 470, y: 208}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 21300000, guid: 4e04fa920a54c624aa801ab19407c88f, type: 3}
+      posicion: {x: 449, y: -78}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 21300000, guid: 24be3a9e762d85e40b6794d4c442400a, type: 3}
+      posicion: {x: -402, y: -70}
+      tamano: {x: 321.3795, y: 216.6094}
+  - texto: Se llaman alimentos ultraprocesados.
+    spritePresentador: {fileID: 21300000, guid: 1c30a4113d394ae47a05ee8f83629d95,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  - texto: "Y no son solo \"comida chatarra\". Son formulaciones industriales dise\xF1adas
+      con docenas de ingredientes para que no puedas parar de comerlos."
+    spritePresentador: {fileID: 21300000, guid: 849aedf6d5c760c46aabe9d8bb956ed8,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes:
+    - sprite: {fileID: 21300000, guid: 99d071c90e2c0614ba87b06d7cfb0bee, type: 3}
+      posicion: {x: -386.1712, y: 194.5865}
+      tamano: {x: 321.3795, y: 216.6094}
+    - sprite: {fileID: 21300000, guid: c42a8447b390bb34999e5035863cbca7, type: 3}
+      posicion: {x: 470, y: 208}
+      tamano: {x: 321.3795, y: 216.6094}
+  - texto: 'Hoy vamos a hablar de eso. '
+    spritePresentador: {fileID: 21300000, guid: 1c30a4113d394ae47a05ee8f83629d95,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  tituloEntrada: {fileID: 0}

@@ -47,3 +47,6 @@ MonoBehaviour:
   - texto: "Lo que quiero con esto es ense\xF1arte a leer."
     vozEnOff: {fileID: 8300000, guid: cec09447d43e8c64f9eed5b09e72d8bf, type: 3}
     imagen: {fileID: 21300000, guid: beb4aa672342a9c4d80c4d28c9933fba, type: 3}
+  - texto: "Algunos paneles se pueden agarrar con el mouse. \xA1\xDAsalo!"
+    vozEnOff: {fileID: 8300000, guid: cec09447d43e8c64f9eed5b09e72d8bf, type: 3}
+    imagen: {fileID: 21300000, guid: 9d79537391980ee428e5571d1c65ccd5, type: 3}

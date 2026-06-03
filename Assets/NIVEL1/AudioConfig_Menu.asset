@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4785bd7d9bbe7f24f8d144e460b7c3cc, type: 3}
+  m_Name: AudioConfig_Menu
+  m_EditorClassIdentifier: 
+  musicaFondo: {fileID: 8300000, guid: 47bff937421517a45bd7f285a2e34081, type: 3}
+  volumenMusica: 0.4
+  sfxEntradaPanel: {fileID: 0}
+  sfxClickGenerico: {fileID: 8300000, guid: c29281facb568394dac0c617474e3f55, type: 3}
+  sfxDecision: {fileID: 0}
+  sfxAcierto: {fileID: 0}
+  sfxFallo: {fileID: 0}
+  sfxAbrirEnciclopedia: {fileID: 0}
+  sfxCerrarEnciclopedia: {fileID: 0}
+  sfxVictoria: {fileID: 0}
+  sfxHoverBoton: {fileID: 8300000, guid: c29281facb568394dac0c617474e3f55, type: 3}
+  volumenSFX: 1

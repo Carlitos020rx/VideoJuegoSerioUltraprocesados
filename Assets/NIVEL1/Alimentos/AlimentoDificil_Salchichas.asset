@@ -53,3 +53,14 @@ MonoBehaviour:
   sellosCorrectos:
   - {fileID: 11400000, guid: 3109c7d26a6c05a4b8711aabc0eb52e9, type: 2}
   - {fileID: 11400000, guid: ae1abeb4d875f9a438dd4e53f75226c7, type: 2}
+  kcalPorPorcion: 301
+  sodioPorPorcion: 44
+  azucaresPorPorcion: 22
+  grasaSaturadaPorPorcion: 11
+  nutrienteClave: 0
+  mensajeUnaPorcion: Una porcion de salchichas son 301 kcal. No parece mucho, pero
+    usualmente vienen 5 o 6 por paquete y rara vez comes una sola.
+  mensajeVariasPorciones: Entre 602 y 903 kcal. Casi la mitad de tu dia en un alimento
+    que es carne reconstruida con aditivos. Tu cuerpo lo procesa como inflamacion.
+  mensajeMuchasPorciones: Te comiste 1204 kcal en salchichas. Sumando 870 mg de sodio
+    por porcion, estas pasando varios limites a la vez sin darte cuenta.

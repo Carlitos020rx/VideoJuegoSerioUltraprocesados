@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4412f4baacaf80148bb6788b1e91cf6a, type: 3}
+  m_Name: DialogoPresentadorCIerre
+  m_EditorClassIdentifier: 
+  lineas:
+  - texto: 'No se trata de no comer nunca una galleta. No se trata de vivir con miedo
+      a una lista de ingredientes. '
+    spritePresentador: {fileID: 21300000, guid: 849aedf6d5c760c46aabe9d8bb956ed8,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  - texto: "Se trata de tener conciencia , de que de vez en cuando no es malo pero
+      que en exceso puede tener serios problemas. Se trata de saber. Se trata de
+      ojear qu\xE9 es lo que vas\_ a consumir."
+    spritePresentador: {fileID: 21300000, guid: 1c30a4113d394ae47a05ee8f83629d95,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  - texto: "Saber que estos productos est\xE1n dise\xF1ados para que los quieras
+      m\xE1s de lo que los necesitas.Que los aditivos que llevan no est\xE1n ah\xED
+      por accidente. Que el ciclo que generan \u2014comer, querer m\xE1s, sentirte
+      peor, querer m\xE1s\u2014 tiene una explicaci\xF3n neurol\xF3gica real."
+    spritePresentador: {fileID: 21300000, guid: df96ac30db1083d4db7b98fb7bcd6add,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  - texto: "La evidencia es clara: el consumo excesivo de ultraprocesados acelera
+      el deterioro cognitivo, aumenta el riesgo de depresi\xF3n y ansiedad,"
+    spritePresentador: {fileID: 21300000, guid: dd689ee53d83dcf44bab46da15aedc9a,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  - texto: reduce el volumen de zonas clave del cerebro, y debilita exactamente las
+      funciones que necesitas para resistir el impulso de consumirlos.
+    spritePresentador: {fileID: 21300000, guid: 849aedf6d5c760c46aabe9d8bb956ed8,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  - texto: "Es un c\xEDrculo. Y la forma de salir es conocerlo. Ahora ya lo conoces."
+    spritePresentador: {fileID: 21300000, guid: dd689ee53d83dcf44bab46da15aedc9a,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  tituloEntrada: {fileID: 0}
