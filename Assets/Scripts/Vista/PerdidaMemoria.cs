@@ -49,6 +49,9 @@ public class PerdidaMemoria : MonoBehaviour
     [Range(0f, 1f)]
     public float probabilidadDisparo = 0.35f;
 
+    [Tooltip("Segundos antes del disparo forzado en el primer alimento")]
+    public float delayDisparoForzado = 7f;
+
     [Header("Mensaje emergente")]
     [Tooltip("Panel con el mensaje (debe tener un TMP_Text hijo)")]
     public RectTransform panelMensaje;
@@ -94,22 +97,15 @@ public class PerdidaMemoria : MonoBehaviour
     // ── API publica que el Nivel1Manager llama ──
 
 public void Activar() { activo = true; if (corrEvaluador == null) corrEvaluador = StartCoroutine(BucleEvaluador()); }
-public void Desactivar() { activo = false; CancelarPerdidaSiActiva(); }
+public void Desactivar() { activo = false; if (corrEvaluador != null) { StopCoroutine(corrEvaluador); corrEvaluador = null; } if (corrEjecutar != null) { StopCoroutine(corrEjecutar); corrEjecutar = null; } CancelarPerdidaSiActiva(); }
     public bool EstaEnModoPerdida() { return enModoPerdida; }
 
     private Coroutine corrEvaluador;
+    private Coroutine corrEjecutar;
 
-IEnumerator BucleEvaluador() { while (activo) { yield return new WaitForSeconds(intervaloEvaluacion); if (!activo) yield break; if (enModoPerdida) continue; if (Random.value < probabilidadDisparo) StartCoroutine(EjecutarPerdida()); } }
+IEnumerator BucleEvaluador() { while (activo) { yield return new WaitForSeconds(intervaloEvaluacion); if (!activo) yield break; if (enModoPerdida) continue; if (Random.value < probabilidadDisparo) corrEjecutar = StartCoroutine(EjecutarPerdida()); } }
 
-    void CancelarPerdidaSiActiva()
-    {
-        if (!enModoPerdida) return;
-        enModoPerdida = false;
-        foreach (var s in simbolosEnPantalla) if (s != null) Destroy(s);
-        simbolosEnPantalla.Clear();
-        if (panelExpediente != null) { panelExpediente.alpha = 1f; panelExpediente.interactable = true; panelExpediente.blocksRaycasts = true; }
-        if (panelAlimento != null) { panelAlimento.alpha = 1f; panelAlimento.interactable = true; panelAlimento.blocksRaycasts = true; }
-    }
+void CancelarPerdidaSiActiva() { enModoPerdida = false; foreach (var s in simbolosEnPantalla) if (s != null) Destroy(s); simbolosEnPantalla.Clear(); simbolosTotal = 0; simbolosRecuperados = 0; if (panelExpediente != null) { panelExpediente.alpha = 1f; panelExpediente.interactable = true; panelExpediente.blocksRaycasts = true; } if (panelAlimento != null) { panelAlimento.alpha = 1f; panelAlimento.interactable = true; panelAlimento.blocksRaycasts = true; } }
 
 IEnumerator EjecutarPerdida() { enModoPerdida = true; if (nivel1Manager != null) nivel1Manager.SetEsperandoDecision(false); if (!yaSeMostroMensaje) { yaSeMostroMensaje = true; StartCoroutine(MostrarMensaje()); } CrearSimbolos(); StartCoroutine(AnimarAparicionSimbolos()); yield return StartCoroutine(ParpadearYDesvanecer()); yield return new WaitUntil(() => simbolosRecuperados >= simbolosTotal); yield return StartCoroutine(RecuperarPaneles()); if (nivel1Manager != null) nivel1Manager.SetEsperandoDecision(true); enModoPerdida = false; }
 
@@ -234,4 +230,9 @@ void CrearSimbolo(RectTransform parent, Vector2 posLocal) { var go = new GameObj
 IEnumerator AnimarAparicionSimbolos() { var copia = new List<GameObject>(simbolosEnPantalla); foreach (var go in copia) { StartCoroutine(AnimarUnSimboloAparicion(go)); yield return new WaitForSeconds(delayEntreSimbolos); } }
 
 IEnumerator AnimarUnSimboloAparicion(GameObject go) { if (go == null) yield break; var rt = go.transform as RectTransform; var img = go.GetComponent<Image>(); var btn = go.GetComponent<Button>(); Color colorFinal = (spriteSimbolo == null) ? new Color(1f, 0.85f, 0.2f, 1f) : Color.white; float t = 0f; while (t < duracionAparicionSimbolo && go != null) { t += Time.deltaTime; float p = Mathf.SmoothStep(0f, 1f, t / duracionAparicionSimbolo); float escala = Mathf.Lerp(escalaInicialSimbolo, 1f, p); if (rt != null) rt.localScale = Vector3.one * escala; if (img != null) { var c = colorFinal; c.a = p; img.color = c; } yield return null; } if (rt != null) rt.localScale = Vector3.one; if (img != null) img.color = colorFinal; if (btn != null) btn.interactable = true; if (go != null && go.GetComponent<BotonHoverEscala>() == null) go.AddComponent<BotonHoverEscala>(); }
+
+
+public void ActivarConDisparoInicial() { activo = true; if (corrEvaluador == null) corrEvaluador = StartCoroutine(BucleConDisparoInicial()); }
+
+IEnumerator BucleConDisparoInicial() { yield return new WaitForSeconds(delayDisparoForzado); if (activo && !enModoPerdida) corrEjecutar = StartCoroutine(EjecutarPerdida()); while (activo) { yield return new WaitForSeconds(intervaloEvaluacion); if (!activo) yield break; if (enModoPerdida) continue; if (Random.value < probabilidadDisparo) corrEjecutar = StartCoroutine(EjecutarPerdida()); } }
 }

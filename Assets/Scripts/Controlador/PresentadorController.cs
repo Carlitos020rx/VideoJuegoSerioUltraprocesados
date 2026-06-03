@@ -13,6 +13,9 @@ public class PresentadorController : MonoBehaviour
     [Header("Transicion de titulo entre segmentos")]
     public TransicionTituloPresentador transicionTitulo;
 
+    [Tooltip("Transicion separada para el titulo final (Fin). Si no se asigna, usa la misma de arriba")]
+    public TransicionTituloPresentador transicionTituloFinal;
+
     [Tooltip("Sprite del titulo final 'Fin' que se muestra al terminar el Cierre")]
     public Sprite tituloFin;
 
@@ -62,13 +65,7 @@ public class PresentadorController : MonoBehaviour
 
     // Llamado por el GameManager al terminar el segmento Cierre.
     // Muestra el titulo "Fin" + pantalla blanca y luego vuelve al menu.
-    public void MostrarTransicionFinal()
-    {
-        if (transicionTitulo != null && tituloFin != null)
-            transicionTitulo.Mostrar(tituloFin, () => GameManager.Instance.IrAlMenu());
-        else
-            GameManager.Instance.IrAlMenu();
-    }
+public void MostrarTransicionFinal() { var t = transicionTituloFinal != null ? transicionTituloFinal : transicionTitulo; if (t != null && tituloFin != null) t.Mostrar(tituloFin, () => GameManager.Instance.IrAlMenu()); else GameManager.Instance.IrAlMenu(); }
 
     DialogoPresentadorData ElegirDialogo(GameManager.Segmento segmento)
     {

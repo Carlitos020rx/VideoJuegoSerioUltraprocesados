@@ -410,7 +410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -415}
+  m_AnchoredPosition: {x: 0, y: -337}
   m_SizeDelta: {x: 413.3567, y: 180.1453}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &52653128
@@ -3190,7 +3190,6 @@ RectTransform:
   - {fileID: 1784571989}
   - {fileID: 2134662131}
   - {fileID: 385862015}
-  - {fileID: 1741144012}
   - {fileID: 1919073998}
   - {fileID: 752910773}
   - {fileID: 63525977}
@@ -3202,6 +3201,7 @@ RectTransform:
   - {fileID: 453945559}
   - {fileID: 1213449105}
   - {fileID: 1469658492}
+  - {fileID: 1741144012}
   - {fileID: 1113814198}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5926,7 +5926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 57}
   m_SizeDelta: {x: 1280, y: 896}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998337944
@@ -6542,7 +6542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2.0549927}
+  m_AnchoredPosition: {x: 0, y: 2.0549316}
   m_SizeDelta: {x: 0, y: 4.0999756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1153370304
@@ -6632,7 +6632,7 @@ GameObject:
   - component: {fileID: 1163813919}
   - component: {fileID: 1163813918}
   m_Layer: 5
-  m_Name: Image
+  m_Name: fondo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6801,7 +6801,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 1.9992065}
+  m_AnchoredPosition: {x: 0, y: 1.9992676}
   m_SizeDelta: {x: -0.00012207, y: 4.2015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1213449106
@@ -6881,7 +6881,7 @@ MonoBehaviour:
   contenedorDialogo: {fileID: 363623151}
   textoDialogo: {fileID: 1347808115}
   velocidadTypewriter: 0.03
-  sonidoTirada: {fileID: 8300000, guid: 30176a2d0533fe744854ff54a5a7dce8, type: 3}
+  sonidoTirada: {fileID: 8300000, guid: c29281facb568394dac0c617474e3f55, type: 3}
   sonidoTecleo: {fileID: 8300000, guid: 30176a2d0533fe744854ff54a5a7dce8, type: 3}
   velocidadTecleo: 2
   volumenTecleo: 1
@@ -10168,15 +10168,16 @@ MonoBehaviour:
   spriteSimbolo: {fileID: 21300000, guid: e014c039616eed74bbe0373df83c1dd4, type: 3}
   tamanoSimbolo: 60
   offsetEsquina: 10
-  duracionParpadeo: 9
+  duracionParpadeo: 5
   cantidadParpadeos: 4
   escalaPicoClick: 1.5
   duracionAnimacionClick: 0.4
   escalaInicialSimbolo: 2.5
   duracionAparicionSimbolo: 0.35
   delayEntreSimbolos: 0.15
-  intervaloEvaluacion: 5
-  probabilidadDisparo: 0.156
+  intervaloEvaluacion: 7
+  probabilidadDisparo: 0.25
+  delayDisparoForzado: 5
   panelMensaje: {fileID: 1469658492}
   textoMensaje: {fileID: 596277976}
   mensaje: "\xA1P\xE9rdida de memoria! Los ultraprocesados afectan tu capacidad de
@@ -11247,7 +11248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.29504395, y: 0}
+  m_AnchoredPosition: {x: -0.29516602, y: 0}
   m_SizeDelta: {x: -0.59009, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2134662132
@@ -11275,7 +11276,7 @@ MonoBehaviour:
   spriteBotonCerrar: {fileID: 21300000, guid: 5d1a861b12e58c4439149380b68f4f2d, type: 3}
   duracionPopIn: 0.3
   escalaInicial: 0
-  escalaRebote: 1.15
+  escalaRebote: 1.5
   sonidoAparecer: {fileID: 8300000, guid: c29281facb568394dac0c617474e3f55, type: 3}
   volumenAparecer: 0.6
   panelMensaje: {fileID: 752910773}
