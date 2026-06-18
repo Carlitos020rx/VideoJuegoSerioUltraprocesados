@@ -26,11 +26,18 @@ MonoBehaviour:
       type: 3}
     vozEnOff: {fileID: 0}
     imagenes: []
-  - texto: "Saber que estos productos est\xE1n dise\xF1ados para que los quieras
-      m\xE1s de lo que los necesitas.Que los aditivos que llevan no est\xE1n ah\xED
-      por accidente. Que el ciclo que generan \u2014comer, querer m\xE1s, sentirte
-      peor, querer m\xE1s\u2014 tiene una explicaci\xF3n neurol\xF3gica real."
+  - texto: "Saber que algunos productos est\xE1n dise\xF1ados para saltarse los sellos
+      de exceso al poner porciones peque\xF1as o poniendo los nutrientes justo en
+      los limites. Que los aditivos que llevan no est\xE1n ah\xED por accidente.
+      Que el ciclo que generan comer, querer m\xE1s, sentirte peor, querer m\xE1s 
+      tiene una explicaci\xF3n neurol\xF3gica real."
     spritePresentador: {fileID: 21300000, guid: df96ac30db1083d4db7b98fb7bcd6add,
+      type: 3}
+    vozEnOff: {fileID: 0}
+    imagenes: []
+  - texto: Se trata de entender que a pesar de que algunos alimentos no tengan sello,
+      consumirlos varias veces sigue siendo igual de malo que si los tuvieran.
+    spritePresentador: {fileID: 21300000, guid: dd689ee53d83dcf44bab46da15aedc9a,
       type: 3}
     vozEnOff: {fileID: 0}
     imagenes: []
