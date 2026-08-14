@@ -1,8 +1,6 @@
 # Ultra-Processed
 
-Videojuego serio sobre alimentos ultraprocesados y cognición, desarrollado en Unity
-como proyecto de grado de Ingeniería Multimedia en la Universidad Autónoma de
-Occidente.
+Videojuego serio sobre alimentos ultraprocesados y cognición, desarrollado en Unity.
 
 ## Sobre el juego
 
