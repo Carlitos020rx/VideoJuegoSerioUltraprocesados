@@ -70,6 +70,8 @@ public class PerdidaMemoria : MonoBehaviour
 
     [Header("Referencias")]
     public Nivel1Manager nivel1Manager;
+    [Tooltip("Contenedor donde se crean los simbolos. Vacio = Canvas raiz. Ubicalo en la jerarquia para controlar la capa")]
+    public RectTransform contenedorSimbolos;
 
     private bool activo = false;
     private bool yaSeMostroMensaje = false;
@@ -147,7 +149,7 @@ IEnumerator EjecutarPerdida() { enModoPerdida = true; if (nivel1Manager != null)
         if (panelAlimento != null) CrearSimbolosEnPanel(panelAlimento.transform as RectTransform);
     }
 
-void CrearSimbolosEnPanel(RectTransform panel) { if (panel == null) return; Vector3[] corners = new Vector3[4]; panel.GetWorldCorners(corners); var canvas = panel.GetComponentInParent<Canvas>(); if (canvas == null) return; var canvasRT = canvas.transform as RectTransform; var cam = canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera; for (int i = 0; i < 4; i++) { Vector2 localPoint; RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRT, RectTransformUtility.WorldToScreenPoint(cam, corners[i]), cam, out localPoint); float dx = (i == 0 || i == 1) ? offsetEsquina : -offsetEsquina; float dy = (i == 0 || i == 3) ? offsetEsquina : -offsetEsquina; CrearSimbolo(canvasRT, localPoint + new Vector2(dx, dy)); } }
+void CrearSimbolosEnPanel(RectTransform panel) { if (panel == null) return; Vector3[] corners = new Vector3[4]; panel.GetWorldCorners(corners); var canvas = panel.GetComponentInParent<Canvas>(); if (canvas == null) return; var canvasRT = canvas.transform as RectTransform; var cam = canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera; RectTransform destino = contenedorSimbolos != null ? contenedorSimbolos : canvasRT; for (int i = 0; i < 4; i++) { Vector2 localPoint; RectTransformUtility.ScreenPointToLocalPointInRectangle(destino, RectTransformUtility.WorldToScreenPoint(cam, corners[i]), cam, out localPoint); float dx = (i == 0 || i == 1) ? offsetEsquina : -offsetEsquina; float dy = (i == 0 || i == 3) ? offsetEsquina : -offsetEsquina; CrearSimbolo(destino, localPoint + new Vector2(dx, dy)); } }
 
 void CrearSimbolo(RectTransform parent, Vector2 posLocal) { var go = new GameObject("Simbolo_" + simbolosTotal); go.transform.SetParent(parent, false); var rt = go.AddComponent<RectTransform>(); rt.anchorMin = new Vector2(0.5f, 0.5f); rt.anchorMax = new Vector2(0.5f, 0.5f); rt.pivot = new Vector2(0.5f, 0.5f); rt.sizeDelta = new Vector2(tamanoSimbolo, tamanoSimbolo); rt.anchoredPosition = posLocal; rt.localScale = Vector3.zero; var img = go.AddComponent<Image>(); img.sprite = spriteSimbolo; img.raycastTarget = true; img.preserveAspect = true; var c = (spriteSimbolo == null) ? new Color(1f, 0.85f, 0.2f, 0f) : new Color(1f, 1f, 1f, 0f); img.color = c; var btn = go.AddComponent<Button>(); btn.interactable = false; var capturado = go; btn.onClick.AddListener(() => OnClickSimbolo(capturado)); simbolosEnPantalla.Add(go); simbolosTotal++; }
 

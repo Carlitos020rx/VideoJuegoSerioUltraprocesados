@@ -32,15 +32,15 @@ MonoBehaviour:
   - nombre: Porcion
     valor: 100g
   - nombre: Calorias (kcal)
-    valor: 536
+    valor: 400
   - nombre: Grasa total
-    valor: 35g
+    valor: 24g
   - nombre: Grasa saturada
-    valor: 12g
+    valor: 8g
   - nombre: Grasa trans
     valor: 0g
   - nombre: Carbohidratos
-    valor: 53g
+    valor: 40g
   - nombre: Azucares
     valor: 1g
   - nombre: Fibra
@@ -52,15 +52,15 @@ MonoBehaviour:
   sellosCorrectos:
   - {fileID: 11400000, guid: 3109c7d26a6c05a4b8711aabc0eb52e9, type: 2}
   - {fileID: 11400000, guid: ae1abeb4d875f9a438dd4e53f75226c7, type: 2}
-  kcalPorPorcion: 536
-  sodioPorPorcion: 33
-  azucaresPorPorcion: 43
-  grasaSaturadaPorPorcion: 44
+  kcalPorPorcion: 400
+  sodioPorPorcion: 525
+  azucaresPorPorcion: 1
+  grasaSaturadaPorPorcion: 8
   nutrienteClave: 0
-  mensajeUnaPorcion: Una porcion de papas son 536 kcal. Suena a una sola bolsa pero
-    es el 27% de tus 2000 kcal diarias... en un snack que comes en 5 minutos.
-  mensajeVariasPorciones: Acabas de comer entre 1072 y 1608 kcal. Eso es entre la
-    mitad y el 80% de toda tu energia del dia. Y ni siquiera son comidas reales.
-  mensajeMuchasPorciones: "Cuatro porciones son 2144 kcal. Pasaste el limite diario
-    solo en papas. La industria sabe que no puedes parar y dise\xF1a la bolsa para
-    eso."
+  mensajeUnaPorcion: 'Una porcion son 400 kcal: el 20% de tus 2000 kcal del dia,
+    en un snack que te comes en cinco minutos. Y son 525 mg de sodio.'
+  mensajeVariasPorciones: Entre 800 y 1200 kcal, del 40% al 60% de tu energia diaria.
+    El sodio ya va entre 1050 y 1575 mg, y ni siquiera fue una comida.
+  mensajeMuchasPorciones: "1600 kcal: el 80% de tu dia solo en papas, mas 2100 mg
+    de sodio. La bolsa grande trae justo esa cantidad, y esta dise\xF1ada para que
+    no pares."

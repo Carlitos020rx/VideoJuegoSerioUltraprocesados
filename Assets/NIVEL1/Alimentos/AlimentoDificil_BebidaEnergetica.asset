@@ -30,9 +30,9 @@ MonoBehaviour:
   esUltraprocesado: 1
   infoNutricional:
   - nombre: Porcion
-    valor: 100ml
+    valor: 500ml
   - nombre: Calorias (kcal)
-    valor: 45
+    valor: 200
   - nombre: Grasa total
     valor: 0g
   - nombre: Grasa saturada
@@ -40,26 +40,26 @@ MonoBehaviour:
   - nombre: Grasa trans
     valor: 0g
   - nombre: Carbohidratos
-    valor: 11g
+    valor: 50g
   - nombre: Azucares
-    valor: 11g
+    valor: 50g
   - nombre: Fibra
     valor: 0g
   - nombre: Proteina
     valor: 0g
   - nombre: Sodio
-    valor: 100mg
+    valor: 150mg
   sellosCorrectos:
   - {fileID: 11400000, guid: 222312b3aecc49e4f879820238cf7c7e, type: 2}
   - {fileID: 11400000, guid: 1977fa02d61d53340a5f40482826a218, type: 2}
-  kcalPorPorcion: 45
-  sodioPorPorcion: 0
-  azucaresPorPorcion: 0
+  kcalPorPorcion: 200
+  sodioPorPorcion: 150
+  azucaresPorPorcion: 50
   grasaSaturadaPorPorcion: 0
   nutrienteClave: 0
-  mensajeUnaPorcion: 100 ml son 45 kcal. Pero una lata trae 250 ml o mas, asi que
-    estas tomando al menos 113 kcal de azucar liquida en cada lata.
-  mensajeVariasPorciones: "Entre 90 y 135 kcal de liquido azucarado. Lo peor: el
-    azucar liquido no te llena, sigues con hambre. Y la cafeina enga\xF1a a tu cuerpo."
-  mensajeMuchasPorciones: 180 kcal puede no parecer mucho... pero son 44 gramos de
-    azucar en una bebida. Eso supera el limite diario recomendado por la OMS.
+  mensajeUnaPorcion: 'Una lata de 500 ml son 200 kcal y 50 g de azucar liquida. La
+    OMS recomienda menos de 25 g al dia: ya vas por el doble.'
+  mensajeVariasPorciones: 'Entre 400 y 600 kcal y entre 100 y 150 g de azucar. Lo
+    peor: el azucar liquido no te llena, asi que sigues con hambre.'
+  mensajeMuchasPorciones: '800 kcal y 200 g de azucar: ocho veces el limite diario.
+    Cuatro latas en una noche de estudio es mas comun de lo que crees.'

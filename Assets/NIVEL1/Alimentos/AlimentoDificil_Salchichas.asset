@@ -33,34 +33,34 @@ MonoBehaviour:
   - nombre: Porcion
     valor: 100g
   - nombre: Calorias (kcal)
-    valor: 301
+    valor: 400
   - nombre: Grasa total
-    valor: 27g
+    valor: 36g
   - nombre: Grasa saturada
-    valor: 10g
+    valor: 14g
   - nombre: Grasa trans
     valor: 0g
   - nombre: Carbohidratos
-    valor: 3g
+    valor: 4g
   - nombre: Azucares
     valor: 1g
   - nombre: Fibra
     valor: 0g
   - nombre: Proteina
-    valor: 12g
+    valor: 15g
   - nombre: Sodio
     valor: 870mg
   sellosCorrectos:
   - {fileID: 11400000, guid: 3109c7d26a6c05a4b8711aabc0eb52e9, type: 2}
   - {fileID: 11400000, guid: ae1abeb4d875f9a438dd4e53f75226c7, type: 2}
-  kcalPorPorcion: 301
-  sodioPorPorcion: 44
-  azucaresPorPorcion: 22
-  grasaSaturadaPorPorcion: 11
+  kcalPorPorcion: 400
+  sodioPorPorcion: 870
+  azucaresPorPorcion: 1
+  grasaSaturadaPorPorcion: 14
   nutrienteClave: 0
-  mensajeUnaPorcion: Una porcion de salchichas son 301 kcal. No parece mucho, pero
-    usualmente vienen 5 o 6 por paquete y rara vez comes una sola.
-  mensajeVariasPorciones: Entre 602 y 903 kcal. Casi la mitad de tu dia en un alimento
-    que es carne reconstruida con aditivos. Tu cuerpo lo procesa como inflamacion.
-  mensajeMuchasPorciones: Te comiste 1204 kcal en salchichas. Sumando 870 mg de sodio
-    por porcion, estas pasando varios limites a la vez sin darte cuenta.
+  mensajeUnaPorcion: Una porcion son 400 kcal y 870 mg de sodio. Parece poco, pero
+    el paquete trae cinco o seis y rara vez comes una sola.
+  mensajeVariasPorciones: 'Entre 800 y 1200 kcal y hasta 2610 mg de sodio. La OMS
+    recomienda menos de 2000 mg al dia: con tres porciones ya lo superaste.'
+  mensajeMuchasPorciones: '1600 kcal, el 80% de tu dia, y 3480 mg de sodio: casi
+    el doble del limite diario. Todo en carne reconstituida con aditivos.'

@@ -20,6 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bf7caf0bd41d60141b1fbece511393d6, type: 2}
   - {fileID: 11400000, guid: de62d31cfd20d9548a1625c0c71c1ffa, type: 2}
   - {fileID: 11400000, guid: f67c986b204b8074b954dc076dac0898, type: 2}
+  - {fileID: 11400000, guid: ed765a286551f914b928639779c3aa4c, type: 2}
   alimentosDificiles:
   - {fileID: 11400000, guid: ef2a10b7e93a4b7499d427bdb5426218, type: 2}
   - {fileID: 11400000, guid: 4e729043a170362419ab20b40adfda06, type: 2}
